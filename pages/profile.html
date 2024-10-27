@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Новая Планета</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: rgba(75, 136, 227, 0.56);
+            padding: 15px 5%;
+            width: 100%;
+            min-height: 64px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="../index.html"><img src="https://framerusercontent.com/assets/G7UzTpYy5S77uBEOsyQTUMvlk.png" alt="Logo" class="nav-logo"></a>
+        <div style="margin-left: auto;">
+            <a href="about_us.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="news.html">Новости</a>
+        </div>
+        <div class="profile-icon"><a href="profile.html">👤</a></div>
+    </header>
+
+    <section class="info">
+        <div class="info-item">
+            <img src="../images/user.png" alt="User  Icon">
+            <span>Фамилия Имя Отчество</span>
+        </div>
+        <div class="info-item">
+            <img src="../images/phone.png" alt="Phone Icon">
+            <span>+78005553535</span>
+        </div>
+        <div class="info-item">
+            <img src="../images/mail.png" alt="Email Icon">
+            <span>mymail@mail.ru</span>
+        </div>
+        <button class="change-password">Редактировать</button>
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <img src="../images/child_3.jpg" alt="АФК">
+            <div class="title">АФК</div>
+            <div class="description">Описание мероприятия</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="#" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="../images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="../images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="../images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/child_1.jpg" alt="АФК">
+            <div class="title">Сенсорная интеграция</div>
+            <div class="description">Описание мероприятия</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="#" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="../images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="../images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="../images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/child_2.jpg" alt="АФК">
+            <div class="title">Расширение мотивационной сферы</div>
+            <div class="description">Описание мероприятия</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="#" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="../images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="../images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="../images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Повторите аналогичные блоки для других карточек -->
+        
+    </section>
+
+    <script>
+        document.querySelectorAll('.like').forEach(likeIcon => {
+            likeIcon.addEventListener('click', function () {
+                this.classList.toggle('liked');
+            });
+        });
+    
+        document.querySelectorAll('.bookmark').forEach(bookmarkIcon => {
+            bookmarkIcon.addEventListener('click', function () {
+                this.classList.toggle('bookmarked');
+            });
+        });
+        
+        document.querySelectorAll('.comment-icon').forEach(commentIcon => {
+            commentIcon.addEventListener('click', function () {
+                const commentSection = this.closest('.card').querySelector('.comment-section');
+                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+        
+        document.querySelectorAll('.send-comment').forEach(sendButton => {
+            sendButton.addEventListener('click', function () {
+                const commentSection = this.closest('.comment-section');
+                const textarea = commentSection.querySelector('textarea');
+                const messageDiv = commentSection.querySelector('.comment-message');
+                
+                if (textarea.value.trim() !== '') {
+                    messageDiv.textContent = 'Комментарий отправлен';
+                    messageDiv.style.display = 'block';
+                    textarea.value = ''; // Очистить текстовое поле
+                } else {
+                    messageDiv.textContent = 'Пожалуйста, введите комментарий';
+                    messageDiv.style.display = 'block';
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая Планета</title>
+    <meta name="description" content="Made with Framer">
+    
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="styles/style_2.css" rel="stylesheet">
+    <style>
+        /* CSS styles for active state */
+        .active-bookmark {
+            animation: pulse 0.5s forwards;
+            background-color: yellow; /* Color when active */
+        }
+
+        .active-like {
+            animation: pulse-like 0.5s forwards;
+            background-color: red; /* Color when active */
+        }
+
+        /* Comment icon styles */
+        .comment-icon {
+            filter: invert(100%); /* Изначальный цвет */
+            transition: filter 0.3s ease-in-out; /* Плавный переход цвета */
+        }
+
+        .comment-icon:hover {
+            filter: invert(50%); /* Цвет при наведении */
+        }
+
+        /* Animation keyframes */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse-like {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+.profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.profile-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Profile styles */
+.profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile img {
+    background-color: #4a90e2;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Info styles */
+.info {
+    background: linear-gradient(145deg, #85a4d1, #4a9edb);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Change password button */
+.change-password {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.change-password:hover {
+    background-color: #0056b3;
+} 
+
+/* Card styles */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #4B88E3, #4b88e3b0);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.description {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.more-btn {
+    margin: 10px;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+}
+
+.more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Animation styles */
+.header, .profile, .info, .cards {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.header { animation-delay: 0s; }
+.profile { animation-delay: 0.5s; }
+.info { animation-delay: 1s; }
+.cards { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.icon-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-group img:hover {
+    transform: scale(1.2);
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.comment-like-icons img:hover,
+.icon-group img:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.liked {
+    background-color: rgba(255, 0, 0, 0.7);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.bookmarked {
+    background-color: rgba(255, 215, 0, 0.7);
+    border: 2px solid white;
+}
+
+.clicked {
+    filter: none;
+    background-color: transparent;
+}
+
+
+.comment-section {
+    margin-top: 10px;
+    border: 1px solid #007BFF; /* Синяя рамка */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f8ff; /* Светло-синий фон */
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #007BFF; /* Синяя рамка */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    resize: none; /* Запретить изменение размера */
+}
+
+.comment-section button.send-comment {
+    background-color: #007BFF; /* Синий фон */
+    color: white; /* Белый текст */
+    border: none; /* Без рамки */
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer; /* Указатель при наведении */
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.comment-section button.send-comment:hover {
+    background-color: #0056b3; /* Темнее синий при наведении */
+}
+
+.comment-message {
+    margin-top: 5px;
+    color: #007BFF; /* Синий текст */
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <img src="https://framerusercontent.com/assets/G7UzTpYy5S77uBEOsyQTUMvlk.png" alt="Logo" class="nav-logo">
+        <div class="nav-links">
+            <span class="nav-link"><a href="pages/about_us.html">О нас</a></span>
+            <span class="nav-link"><a href="pages/contacts.html">Контакты</a></span>
+            <span class="nav-link"><a href="pages/news.html">Новости</a></span>
+            <div class="profile-icon"><a href="pages/profile.html">👤</a></div>
+        </div>
+    </nav>
+
+    
+    <section class="cards">
+        <div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск..." />
+                <button class="search-button">Найти</button>
+            </div>
+            <div class="category">
+                <h1>Выберите области:</h1>
+                <form>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sensory_integration" name="field" value="Сенсорная интеграция">
+                        <label for="sensory_integration">Сенсорная интеграция</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="logopedia" name="field" value="Логопедия">
+                        <label for="logopedia">Логопедия</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="afk" name="field" value="АФК">
+                        <label for="afk">АФК</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="psychiatry" name="field" value="Психиатрия">
+                        <label for="psychiatry">Психиатрия</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="neurology" name="field" value="Неврология">
+                        <label for="neurology">Неврология</label>
+                    </div>
+                    <button class="button_category">Выбрать</button>
+                </div>
+            </form>
+        </div>
+        <div class="card">
+            <img src="images/child_3.jpg" alt="АФК">
+            <div class="title">АФК</div>
+            <div class="description">Статья собержит информацию о предупреждении и личении АФК</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="https://adpo-edu.ru/blog/adaptivnaya-fizicheskaya-kultura-chto-ehto-ee-celi-i-zadachi" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/child_1.jpg" alt="АФК">
+            <div class="title">Сенсорная интеграция</div>
+            <div class="description">Статья содержит информацию, о том, что такое сенсорная интеграция и как с этим бороться</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="https://www.krasotaimedicina.ru/diseases/psychiatric/SPD" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/child_2.jpg" alt="АФК">
+            <div class="title">Расширение мотивационной сферы</div>
+            <div class="description">Перейдите и узнайте</div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <a href="https://studfile.net/preview/16497599/page:31/" class="more-btn">Подробнее</a>
+                <div class="comment-like-icons">
+                    <img src="images/comment.png" alt="Comment" class="comment-icon">
+                    <img src="images/like.png" alt="Like" class="like">
+                </div>
+            </div>
+            <div class="icon-group">
+                <img src="images/bookmark.png" alt="Bookmark" class="bookmark bookmarked">
+            </div>
+            <div class="comment-section" style="display: none;">
+                <textarea placeholder="Введите ваш комментарий"></textarea>
+                <button class="send-comment">Отправить</button>
+                <div class="comment-message" style="display: none;"></div>
+            </div>
+        </div>
+        
+       
+        
+    </section>
+
+    <script>
+        document.querySelectorAll('.like').forEach(likeIcon => {
+            likeIcon.addEventListener('click', function () {
+                this.classList.toggle('liked');
+            });
+        });
+    
+        document.querySelectorAll('.bookmark').forEach(bookmarkIcon => {
+            bookmarkIcon.addEventListener('click', function () {
+                this.classList.toggle('bookmarked');
+            });
+        });
+        
+        document.querySelectorAll('.comment-icon').forEach(commentIcon => {
+            commentIcon.addEventListener('click', function () {
+                const commentSection = this.closest('.card').querySelector('.comment-section');
+                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+        
+        document.querySelectorAll('.send-comment').forEach(sendButton => {
+            sendButton.addEventListener('click', function () {
+                const commentSection = this.closest('.comment-section');
+                const textarea = commentSection.querySelector('textarea');
+                const messageDiv = commentSection.querySelector('.comment-message');
+                
+                if (textarea.value.trim() !== '') {
+                    messageDiv.textContent = 'Комментарий отправлен';
+                    messageDiv.style.display = 'block';
+                    textarea.value = ''; // Очистить текстовое поле
+                } else {
+                    messageDiv.textContent = 'Пожалуйста, введите комментарий';
+                    messageDiv.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+    
+</body>
+</html>

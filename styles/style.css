@@ -1,0 +1,310 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e6f7ff;
+}
+
+/* Header styles */
+.header {
+    background: rgb(206, 233, 192);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header img:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+    align-self: self-start;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: rgb(206, 233, 192);
+    padding: 15px 5%;
+    width: 100%;
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header nav a:hover {
+    color: #0f56d8;
+}
+
+.profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.profile-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Profile styles */
+.profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile img {
+    background-color: #4a90e2;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Info styles */
+.info {
+    background: linear-gradient(145deg, #85a4d1, #4a9edb);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Change password button */
+.change-password {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.change-password:hover {
+    background-color: #0056b3;
+} 
+
+/* Card styles */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #4B88E3, #4b88e3b0);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.description {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.more-btn {
+    margin: 10px;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+}
+
+.more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Animation styles */
+.header, .profile, .info, .cards {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.header { animation-delay: 0s; }
+.profile { animation-delay: 0.5s; }
+.info { animation-delay: 1s; }
+.cards { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.icon-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-group img:hover {
+    transform: scale(1.2);
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.comment-like-icons img,
+.icon-group img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.comment-like-icons img:hover,
+.icon-group img:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.liked {
+    background-color: rgba(255, 0, 0, 0.7);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.bookmarked {
+    background-color: rgba(255, 215, 0, 0.7);
+    border: 2px solid white;
+}
+
+.clicked {
+    filter: none;
+    background-color: transparent;
+}
+
+
+.comment-section {
+    margin-top: 10px;
+    border: 1px solid #007BFF; /* Синяя рамка */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f8ff; /* Светло-синий фон */
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #007BFF; /* Синяя рамка */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    resize: none; /* Запретить изменение размера */
+}
+
+.comment-section button.send-comment {
+    background-color: #007BFF; /* Синий фон */
+    color: white; /* Белый текст */
+    border: none; /* Без рамки */
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer; /* Указатель при наведении */
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.comment-section button.send-comment:hover {
+    background-color: #0056b3; /* Темнее синий при наведении */
+}
+
+.comment-message {
+    margin-top: 5px;
+    color: #007BFF; /* Синий текст */
+    font-size: 14px;
+}
+

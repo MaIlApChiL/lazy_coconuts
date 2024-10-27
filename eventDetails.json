@@ -1,0 +1,34 @@
+[
+  {
+    "id_event": 1,
+    "category": null,
+    "description": "АФК курс от Виктора Блуда, выдающийся спортсмен и гиревик",
+    "href": "https://blud.info/all/tproduct/345117216-453173505611-lfk-kurs-viktora-bluda",
+    "Name": "ЛФК",
+    "Image": "https://static.tildacdn.com/tild3665-3234-4461-a537-333231646532/AkMZNOK.jpeg"
+  },
+  {
+    "id_event": 3,
+    "category": null,
+    "description": "Сенсорная интеграция, что это?",
+    "href": "https://www.krasotaimedicina.ru/diseases/psychiatric/SPD",
+    "Name": "Сенсорная интеграция",
+    "Image": "https://www.krasotaimedicina.ru/upload/iblock/88c/nz25rxnxq47vsunqcbncmxzyheh919ua.jpg"
+  },
+  {
+    "id_event": 4,
+    "category": null,
+    "description": "Расширение мотивационной сферы зачем ребёнку это нужно?",
+    "href": "https://studfile.net/preview/16497599/page:31/",
+    "Name": "Расширение мотивационной",
+    "Image": "https://www.ckofr.com/images/stories/psixologiya/motvaciya.jpg"
+  },
+  {
+    "id_event": 6,
+    "category": null,
+    "description": "Дети с ОВЗ",
+    "href": "https://www.defectologiya.pro/zhurnal/deti_s_narusheniyami_v_razvitii/",
+    "Name": "Дети с ОВЗ",
+    "Image": "https://www.mgpu.ru/wp-content/uploads/2021/11/uo-975x615.jpg"
+  }
+]

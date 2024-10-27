@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <!-- <link href="../styles/style_2.css" rel="stylesheet"> -->
+    <style>
+        body {
+            background-color: #fff;
+            font-family: sans-serif;
+        }
+        
+        .container-b {
+            display: flex;  
+            left: 25%;
+            transform: translateX(25%);
+            width: 60%;
+            /* overflow: auto; */
+            padding-left: 50px;
+        }
+        
+        .container {
+            background-color: #4B88E3;
+            display: flex;  
+            border-radius: 20px;
+            left: 25%;
+            transform: translateX(25%);
+            width: 60%;
+            /* overflow: auto; */
+            padding: 50px;
+        }
+
+        .card {
+            display: flex;
+            /* left: 25%; */
+            /* transform: translateX(13%); */
+            width: 75%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translate(0%, -5px);
+        }
+
+        .card-image {
+            height: 240px;
+            width: 360px;
+            background: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 30px;
+            width: 720px;
+            flex: 1;
+            background-color: rgba(75, 136, 227, 0.73);
+            color: white;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #27c2f2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1fa8d4;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            background-color: rgba(75, 136, 227, 0.56);
+            padding: 15px 5%;
+            width: 90%;
+            min-height: 64px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="../index.html"><img src="https://framerusercontent.com/assets/G7UzTpYy5S77uBEOsyQTUMvlk.png" alt="Logo" class="nav-logo"></a>
+        <div class="nav-links">
+            <span class="nav-link"><a href="about_us.html">О нас</a></span>
+            <span class="nav-link"><a href="contacts.html">Контакты</a></span>
+            <span class="nav-link"><a href="news.html">Новости</a></span>
+            <div class="profile-icon"><a href="profile.html">👤</a></div>
+        </div>
+    </nav>
+
+    <div class="container-b">
+        <h1>Новости</h2>
+    </div> 
+    <div class="container">
+        <div class="gapper">
+                <div class="card">
+                    <div class="card-image"><img src="https://static.tildacdn.com/tild6230-3264-4864-a132-323130656439/Targetphoto.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Аутизм. Вызовы и решения</h3>
+                        <p class="card-description">XII Международная научно-практическая конференция
+                            по проблемам аутизма</p>
+                        <button class="button" onclick="document.location='https://autismchallenge.ru/abudhabi_conference_2024'">Подробнее</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="https://i.imgur.com/Ti44LlC.jpeg" height = "100%"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Российский фестиваль #ЛюдиКакЛюди</h3>
+                        <p class="card-description">Ежегодный всероссийский инклюзивный фестиваль #ЛюдиКак Люди в рамках Всероссийской недели распространения информации об аутизме</p>
+                        <button class="button" onclick="document.location='https://2april.ru/'">Подробнее</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src="https://sirius.gov.ru/upload/iblock/6e3/ts2bro3zo2lii16fterei3a4vic7s4e1.jpg" height = "100%"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Новые клинические испытания по РАС</h3>
+                        <p class="card-description">как сделать, чтобы размер card-image зависел не от размер вставляемой картинки, а от размера card-content</p>
+                        <button class="button" onclick="document.location='https://asi.org.ru/news/2024/03/28/rossijskoe-obshhestvo-psihiatrov-razrabotalo-novyj-proekt-klinicheskih-rekomendaczij-po-ras/'">Подробнее</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

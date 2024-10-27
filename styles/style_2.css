@@ -1,0 +1,343 @@
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: white;
+    min-width: 320px;
+}
+
+/* Стили для навигации */
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: rgba(75, 136, 227, 0.56);
+    padding: 15px 5%;
+    width: 100%;
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* Стили для карточек */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 5%;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    max-width: 320px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 240px;
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 30px;
+    background-color: rgba(75, 136, 227, 0.73);
+    color: white;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #27c2f2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #1fa8d4;
+}
+
+/* Стили для FAQ секции */
+.faq-section {
+    background-color: #cee9c0;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: clamp(30px, 5vw, 50px);
+    font-weight: 700;
+    color: rgb(0, 17, 34);
+    margin-bottom: 40px;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgb(109, 162, 242);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-item:hover {
+    background: rgb(98, 146, 218);
+}
+
+.faq-question {
+    color: rgb(0, 17, 34);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgb(98, 146, 218);
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.search-input:focus {
+    outline: none;
+    border-color: rgb(98, 146, 218);
+}
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 20px;
+    background-color: rgb(98, 146, 218);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-button:hover {
+    background-color: rgb(98, 146, 218);
+}
+.button_bookmark {
+    position: absolute;
+    top: 10px; /* Adjust this value to move it vertically */
+    right: 10px; /* Adjust this value to move it horizontally */
+}
+
+.button_comment{
+    position: absolute;
+    top: 352px;
+    right: 120px;
+    background: none;
+    border: 0;
+}
+.button_comment1{
+    position: absolute;
+    top: 375px;
+    right: 120px;
+}
+.button_like{
+    position: absolute;
+    top: 352px;
+    right: 70px;
+}
+.button_like1{
+    position: absolute;
+    top: 375px;
+    right: 70px;
+}
+.category{
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #005f8d;
+}
+.checkbox-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #005f8d;
+    border-radius: 5px;
+    background-color: #b3e0f2;
+}
+input[type="checkbox"] {
+    accent-color: #005f8d;
+}
+label {
+    font-size: 18px;
+    margin-left: 8px;
+}
+.button_category {
+    background-color: #005f8d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button_category:hover {
+    background-color: #919191;
+}
+
+.button_bookmark,
+.button_like {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 5px; /* Added border-radius for rounded corners */
+}
+
+.button_bookmark:hover,
+.button_like:hover {
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.active-bookmark {
+    animation: pulse 0.5s forwards;
+    background-color: rgba(255, 215, 0, 0.7);
+    border: 2px solid white;
+}
+
+.active-like {
+    animation: pulse-like 0.5s forwards;
+    background-color: rgba(255, 0, 0, 0.7);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.icon-group img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.icon-group img:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.comment-like-icons img.comment-icon {
+    filter: invert(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.comment-like-icons img.comment-icon:hover {
+    filter: invert(50%);
+}
+
+
+/* Keyframes for animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-like {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button_auth {
+    background-color: #005f8d; /* Change to match your color scheme */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button_auth:hover {
+    background-color: #004d73; /* Darker shade for hover effect */
+}
